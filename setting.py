@@ -9,6 +9,6 @@ BGCOLOR = DARKGREY
 WIDTH = 1100
 HEIGHT = 641
 FPS = 60
-title = "puzzle game :D"
+title = "number puzzle game :D"
 TILESIZE = 128
 GAME_SIZE = 3
