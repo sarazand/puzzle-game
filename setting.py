@@ -1,14 +1,14 @@
 # COLORS (r, g, b)
-WHITE =(255, 255, 255)
-BLACK =(0, 0, 0)
-DARKGREY =(40, 40, 40)
-LIGHTGREY =(100, 100, 100)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+DARKGREY = (40, 40, 40)
+LIGHTGREY = (100, 100, 100)
 BGCOLOR = DARKGREY
 
-# GAME SETTINGS
+# game setting
 WIDTH = 1100
 HEIGHT = 641
 FPS = 60
-title = "number puzzle game :D"
+title = "Number Puzzle Game :D"
 TILESIZE = 128
 GAME_SIZE = 3
