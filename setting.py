@@ -6,8 +6,8 @@ LIGHTGREY = (100, 100, 100)
 BGCOLOR = DARKGREY
 
 # game setting
-WIDTH = 1100
-HEIGHT = 641
+WIDTH = 850
+HEIGHT = 600
 FPS = 60
 title = "Number Puzzle Game :D"
 TILESIZE = 128
