@@ -61,7 +61,25 @@ class Game:
             if event.type ==pygame.quit:
                 pygame.quit()
                 quit(0)
+            
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_x, mouse_y = pygame.mouse.get_pos()
+                for row, tiles in enumerate(self.tiles):
+                    for col, tile in enumerate(tiles):
+                        if tile.click(mouse_x, mouse_y):
+                          if tile.right() and self.tiles_grid[row][col + 1] == 0:
+                              self.tiles_grid[row][col], self.tiles_grid[row][col + 1] = self.tiles_grid[row][col + 1], self.tiles_grid[row][col]
 
+                          if tile.left() and self.tiles_grid[row][col - 1] == 0:
+                              self.tiles_grid[row][col], self.tiles_grid[row][col - 1] = self.tiles_grid[row][col - 1], self.tiles_grid[row][col]
+
+                          if tile.up() and self.tiles_grid[row - 1][col] == 0:
+                              self.tiles_grid[row][col], self.tiles_grid[row - 1][col] = self.tiles_grid[row - 1][col], self.tiles_grid[row][col]
+
+                          if tile.down() and self.tiles_grid[row + 1][col] == 0:
+                              self.tiles_grid[row][col], self.tiles_grid[row + 1][col] = self.tiles_grid[row + 1][col], self.tiles_grid[row][col]
+                        
+                          self.draw_tiles()
 
 
 game = Game()

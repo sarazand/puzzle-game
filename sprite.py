@@ -21,10 +21,25 @@ class Tile(pygame.sprite.Sprite):
             draw_x = (TILESIZE / 2) - self.font_size[0] / 2
             draw_y = (TILESIZE / 2) - self.font_size[1] / 2
             self.image.blit(font_surface, (draw_x, draw_y))
+        else:
+            self.image.fill(BGCOLOR)
 
     def update(self):
         self.rect.x = self.x * TILESIZE
         self.rect.y = self.y * TILESIZE
 
     def click(self, mouse_x, mouse_y):
-        return self.rect.left <= mouse_x <= self.rect.right and self.rect.top <= self.rect.bottom
+        return self.rect.left <= mouse_x <= self.rect.right and self.rect.top <= mouse_y <= self.rect.bottom
+    
+    def right(self):
+        return self.rect.x + TILESIZE < GAME_SIZE * TILESIZE
+    
+    def left(self):
+        return self.rect.x - TILESIZE >= 0
+    
+    def up(self):
+        return self.rect.y - TILESIZE >= 0
+    
+    def down(self):
+        return self.rect.y + TILESIZE < GAME_SIZE * TILESIZE
+
